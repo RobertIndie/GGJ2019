@@ -266,3 +266,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Tip: {fileID: 6085507526561036788}
   m_IsEntered: 0
+  m_DestScene: 1
