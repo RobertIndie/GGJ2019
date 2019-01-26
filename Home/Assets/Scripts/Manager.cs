@@ -15,7 +15,7 @@ public class Manager : MonoBehaviour
     public static Manager instance;
     public PlayableDirector director;
     public GameObject player;
-    public GameObject camera;
+    public GameObject m_Camera;
     [System.Serializable]
     public struct BubleItem
     {
@@ -104,6 +104,6 @@ public class Manager : MonoBehaviour
     void EnterSessionTwo()
     {
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        
+        m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
     }
 }
