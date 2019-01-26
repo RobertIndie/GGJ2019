@@ -16,6 +16,15 @@ public class Effect : MonoBehaviour
     private Image image;
     private bool flag;
 
+    public bool DarkChange
+    {
+        set
+        {
+            if (value) startDarkChange();
+            else endDarkChange();
+        }
+    }
+
      void Start()
     {
         image = GetComponentInChildren<Image>();
