@@ -32,6 +32,14 @@ public class Effect : MonoBehaviour
                 nowTime = 0;
             darkChange();
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            startDarkChange();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            endDarkChange();
+        }
     }
 
     public void startDarkChange()
