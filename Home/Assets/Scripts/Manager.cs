@@ -55,6 +55,7 @@ public class Manager : MonoBehaviour
         instance = this;
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         director.stopped += OnDirectorStopped;
+        director.paused += OnDirectorStopped;
     }
 
     void OnDirectorStopped(PlayableDirector director)
@@ -79,7 +80,11 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StopCoroutine("AwakePlot");
+            director.Stop();
+        }
     }
     public enum ManagerScene
     {
