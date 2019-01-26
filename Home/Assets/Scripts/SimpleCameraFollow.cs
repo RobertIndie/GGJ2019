@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SimpleCameraFollow : MonoBehaviour
 {
@@ -10,13 +11,18 @@ public class SimpleCameraFollow : MonoBehaviour
 
     float lastPlayerXPostion;
     private float playerMoveVector;
+    
+    private void Start()
+    {
         
+    }
+
     void Update()
     {
         //predictionPlayerMoveVector();
         //FixCameraPos();
-        transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
 
+        transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
     }
 
     void predictionPlayerMoveVector()
