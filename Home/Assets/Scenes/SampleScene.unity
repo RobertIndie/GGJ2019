@@ -545,7 +545,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: e9e675bc7aef2ca48a96ea0cebd9ecd1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.65272343, b: 0.65272343, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -567,7 +567,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2.81, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2060107329
 BoxCollider2D:
@@ -717,6 +717,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6002326926113462308, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: m_Color.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_Name
@@ -760,7 +765,7 @@ PrefabInstance:
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
