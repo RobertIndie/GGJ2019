@@ -17,23 +17,6 @@ public class SimpleCameraFollow : MonoBehaviour
         //FixCameraPos();
         transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            Debug.Log("M");
-            //创建一个射线，该射线从主摄像机中发出，而发出点是鼠标
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //创建一个射线信息集
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log("Open Door1");
-                //如果点击的是sprite目标
-                if (hit.transform.tag == "DoorHandle")
-                {
-                    Debug.Log("Open Door");
-                }
-            }
-        }
     }
 
     void predictionPlayerMoveVector()
