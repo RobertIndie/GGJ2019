@@ -12,7 +12,7 @@ public class Room : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EnterRoom();
+
     }
 
     // Update is called once per frame
@@ -23,12 +23,11 @@ public class Room : MonoBehaviour
             float a;
             if (m_IsEntered)
             {
-                a = m_ShadowChangeCurve.Evaluate(m_CurveTimeLength - (m_ShadowChangeStopTime - Time.time));
-                
+                a = m_ShadowChangeCurve.Evaluate(m_ShadowChangeStopTime - Time.time);
             }
             else
             {
-                a = m_ShadowChangeCurve.Evaluate(m_ShadowChangeStopTime - Time.time);
+                a = m_ShadowChangeCurve.Evaluate(m_CurveTimeLength - (m_ShadowChangeStopTime - Time.time));   
             }
             m_Shadow.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, a);
         }
@@ -44,5 +43,15 @@ public class Room : MonoBehaviour
     {
         m_IsEntered = false;
         m_ShadowChangeStopTime = Time.time + m_CurveTimeLength;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        EnterRoom();
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        LeaveRoom();
     }
 }
