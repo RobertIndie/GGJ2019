@@ -59,7 +59,8 @@ public class Manager : MonoBehaviour
     void Start()
     {
         ChangeScene(ManagerScene.Front);
-        EnterSessionTwo();
+        EnterSessionOne();
+        //EnterSessionTwo();
     }
 
     // Update is called once per frame
