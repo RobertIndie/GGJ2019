@@ -19,14 +19,15 @@ public class Manager : MonoBehaviour
     }
     public List<BubleItem> m_bubles;
     public GameObject m_prefab_BubleParent;
-    public GameObject GetBuble(string bubleName)
+    public GameObject GetBubleContent(string bubleName)
     {
         GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
         GameObject buble = Instantiate(bublePrefab);
-        GameObject bubleParent = Instantiate(m_prefab_BubleParent);
-        buble.transform.parent = bubleParent.GetComponentInChildren<SpriteRenderer>().transform.parent;
-        buble.transform.position = Vector3.zero;
-        return bubleParent;
+        //GameObject bubleParent = Instantiate(m_prefab_BubleParent);
+        //buble.transform.parent = bubleParent.GetComponentInChildren<SpriteRenderer>().transform.parent;
+        //buble.transform.position = Vector3.zero;
+        //return bubleParent;
+        return buble;
     }
 
     private void Awake()
