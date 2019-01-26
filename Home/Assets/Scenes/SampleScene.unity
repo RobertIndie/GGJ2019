@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2080,15 +2080,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 892697189}
     m_Modifications:
-    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 6002326926113462308, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_Color.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
@@ -2315,7 +2315,9 @@ MonoBehaviour:
   m_BackScene: {fileID: 648075223}
   m_FrontScene: {fileID: 2130416526}
   m_Effect: {fileID: 1152760673}
-  director: {fileID: 0}
+  director: {fileID: 1001096097}
+  player: {fileID: 2060107325}
+  camera: {fileID: 2000183596}
   m_bubles:
   - bubleName: robert
     bubleObject: {fileID: 354575982300645605, guid: 3884d8988228287458bf571ec6a9b5d0,
@@ -2953,15 +2955,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 892697189}
     m_Modifications:
-    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 6002326926113462308, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_Color.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}

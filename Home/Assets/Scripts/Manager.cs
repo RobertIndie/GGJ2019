@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
     public static Manager instance;
     public PlayableDirector director;
     public GameObject player;
+    public GameObject camera;
     [System.Serializable]
     public struct BubleItem
     {
@@ -55,7 +56,7 @@ public class Manager : MonoBehaviour
     void Start()
     {
         ChangeScene(ManagerScene.Front);
-        StartCoroutine(AwakePlot());
+        EnterSessionTwo();
     }
 
     // Update is called once per frame
@@ -86,6 +87,11 @@ public class Manager : MonoBehaviour
                 break;
         }
     }
+
+    void EnterSessionOne()
+    {
+        StartCoroutine(AwakePlot());
+    }
     
     IEnumerator AwakePlot()
     {
@@ -93,5 +99,11 @@ public class Manager : MonoBehaviour
         yield return new WaitForSeconds(4f);
         m_Effect.GetComponent<Effect>().endDarkChange();
         director.Play(GetPlot("Awake"));
+    }
+
+    void EnterSessionTwo()
+    {
+        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        
     }
 }
