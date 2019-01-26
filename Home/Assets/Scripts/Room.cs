@@ -13,6 +13,7 @@ public class Room : MonoBehaviour
     void Start()
     {
         m_Shadow.SetActive(true);
+        GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
     }
 
     // Update is called once per frame
