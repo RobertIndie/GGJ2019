@@ -2,7 +2,6 @@
 
 public class Player : Entity
 {
-
     void Update()
     {
         base.Update();
@@ -20,17 +19,23 @@ public class Player : Entity
                 isUsed = true;
                 Handle(hits[i]);
             }
-            if(!isUsed) moveDest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (!isUsed) moveDest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
+
     public void Handle(RaycastHit hit)
     {
-        switch (hit.collider.name)
-        {
-            case "photo":
-                Debug.Log("点击了照片");
-                break;
-        }
+        if (Mathf.Abs(gameObject.transform.position.x - hit.transform.position.x) < 2)
+            switch (hit.collider.name)
+            {
+                case "photo":
+                    var gameObject = GameObject.Find("Manager");
+                    if (gameObject == null)
+                        break;
+                    gameObject.GetComponent<SecondScenesManager>().startScenesOne = true;
+                    break;
+            }
     }
 
     public void DisControl()

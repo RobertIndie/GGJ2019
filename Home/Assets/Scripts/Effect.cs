@@ -18,7 +18,9 @@ public class Effect : MonoBehaviour
     private bool flag;
     
      void Awake()
-    {
+     {
+         if (m_ImageObject == null)
+             return;
         m_ImageObject.SetActive(true);
         image = m_ImageObject.GetComponent<Image>();
         image.transform.localScale = new Vector3(1920f / Screen.width, 2080f / Screen.height, 1);
