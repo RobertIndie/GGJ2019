@@ -30,4 +30,9 @@ public class Player : MonoBehaviour
             //rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
         }
     }
+
+    public void Stop()
+    {
+        moveDest = transform.position;
+    }
 }
