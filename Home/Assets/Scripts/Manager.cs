@@ -34,6 +34,9 @@ public class Manager : MonoBehaviour
     {
         return (from i in m_plots where i.plotName == plotName select i.asset).First();
     }
+    public List<GameObject> m_YoungRooms;
+    public List<GameObject> m_MatureRooms;
+    public List<GameObject> m_OldRooms;
     public GameObject m_prefab_BubleParent;
     public GameObject GetBubleContent(string bubleName)
     {
@@ -93,24 +96,9 @@ public class Manager : MonoBehaviour
     }
     public void ChangePeriod(Period period)
     {
-        switch (period)
-        {
-            case Period.Young:
-                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(true);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(false);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(false);
-                break;
-            case Period.Mature:
-                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(false);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(true);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(false);
-                break;
-            case Period.Old:
-                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(false);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(false);
-                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(true);
-                break;
-        }
+        foreach (var g in m_YoungRooms) g.SetActive(period == Period.Young);
+        foreach (var g in m_MatureRooms) g.SetActive(period == Period.Mature);
+        foreach (var g in m_OldRooms) g.SetActive(period == Period.Old);
     }
 
 
@@ -131,5 +119,6 @@ public class Manager : MonoBehaviour
     {
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+        ChangePeriod(Period.Old);
     }
 }

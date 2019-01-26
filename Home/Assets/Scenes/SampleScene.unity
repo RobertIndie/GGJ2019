@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -443,7 +443,12 @@ PrefabInstance:
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Young
       objectReference: {fileID: 0}
     - target: {fileID: 2893473052400043685, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -1579,6 +1584,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &773561026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 254309876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832564071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1727,6 +1738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mature
       objectReference: {fileID: 0}
     - target: {fileID: 2893473052400043685, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -1952,7 +1968,12 @@ PrefabInstance:
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Old
       objectReference: {fileID: 0}
     - target: {fileID: 2893473052400043685, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -2120,6 +2141,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 1.246789
       objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186507, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96850bbb0dd287a4bbe649727e4ad7e3, type: 3}
 --- !u!1001 &925953235
@@ -2129,15 +2155,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 892697189}
     m_Modifications:
-    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 6002326926113462308, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_Color.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
@@ -2364,8 +2390,9 @@ MonoBehaviour:
   m_BackScene: {fileID: 648075223}
   m_FrontScene: {fileID: 2130416526}
   m_Effect: {fileID: 1152760673}
-  director: {fileID: 0}
-  player: {fileID: 0}
+  director: {fileID: 1001096097}
+  player: {fileID: 2060107325}
+  m_Camera: {fileID: 2000183596}
   m_bubles:
   - bubleName: robert
     bubleObject: {fileID: 354575982300645605, guid: 3884d8988228287458bf571ec6a9b5d0,
@@ -2373,6 +2400,14 @@ MonoBehaviour:
   m_plots:
   - plotName: Awake
     asset: {fileID: 11400000, guid: 267e54853d3e03444bdac28aa0cd80c9, type: 2}
+  m_YoungRooms:
+  - {fileID: 1611083136}
+  - {fileID: 773561026}
+  m_MatureRooms:
+  - {fileID: 1285675960}
+  m_OldRooms:
+  - {fileID: 2075431977}
+  - {fileID: 1555266401}
   m_prefab_BubleParent: {fileID: 793387312313534062, guid: 2570402b02dd46f4eacef8630f038269,
     type: 3}
 --- !u!95 &1001096096
@@ -2666,7 +2701,12 @@ PrefabInstance:
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Young
       objectReference: {fileID: 0}
     - target: {fileID: 2893473052400043685, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -3003,15 +3043,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 892697189}
     m_Modifications:
-    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
-        type: 3}
-      propertyPath: m_Name
-      value: Door
-      objectReference: {fileID: 0}
     - target: {fileID: 6002326926113462308, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
       propertyPath: m_Color.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 7653288686329361856, guid: 465c268b93f02cb41874d5f1ced05eb4,
         type: 3}
@@ -3315,6 +3355,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1285675960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 881922433}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1333361319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,6 +3598,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1555266401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2893473052118305325}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1563956441
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,6 +3683,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1611083136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136438375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1663408842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4444,6 +4502,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3074012832908325505}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2075431977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 900075099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103905877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4627,6 +4691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Old
       objectReference: {fileID: 0}
     - target: {fileID: 2893473052400043685, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
