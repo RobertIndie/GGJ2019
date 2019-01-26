@@ -11,6 +11,8 @@ public class SimpleCameraFollow : MonoBehaviour
 
     float lastPlayerXPostion;
     private float playerMoveVector;
+
+    public bool isControllable = false;
     
     private void Start()
     {
@@ -21,7 +23,7 @@ public class SimpleCameraFollow : MonoBehaviour
     {
         //predictionPlayerMoveVector();
         //FixCameraPos();
-
+        if(isControllable)
         transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
     }
 

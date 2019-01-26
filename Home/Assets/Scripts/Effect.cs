@@ -21,7 +21,7 @@ public class Effect : MonoBehaviour
     {
         m_ImageObject.SetActive(true);
         image = m_ImageObject.GetComponent<Image>();
-        image.transform.localScale = new Vector3(1920f / Screen.width, 1080f / Screen.height, 1);
+        image.transform.localScale = new Vector3(1920f / Screen.width, 2080f / Screen.height, 1);
         image.color = new Color(0, 0, 0, 0.5f);
     }
     
