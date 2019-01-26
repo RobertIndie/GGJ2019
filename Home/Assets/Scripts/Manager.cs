@@ -68,6 +68,10 @@ public class Manager : MonoBehaviour
     {
         Front,Back
     }
+    public enum Period
+    {
+        Young,Mature,Old
+    }
     public void ChangeScene(ManagerScene ms)
     {
         var o = GameObject.FindGameObjectsWithTag("Shadow");
@@ -87,6 +91,28 @@ public class Manager : MonoBehaviour
                 break;
         }
     }
+    public void ChangePeriod(Period period)
+    {
+        switch (period)
+        {
+            case Period.Young:
+                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(true);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(false);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(false);
+                break;
+            case Period.Mature:
+                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(false);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(true);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(false);
+                break;
+            case Period.Old:
+                foreach (var g in GameObject.FindGameObjectsWithTag("Young")) g.SetActive(false);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Mature")) g.SetActive(false);
+                foreach (var g in GameObject.FindGameObjectsWithTag("Old")) g.SetActive(true);
+                break;
+        }
+    }
+
 
     void EnterSessionOne()
     {
