@@ -7,7 +7,7 @@ public class DoorHandle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.Find("Tip").gameObject.GetComponent<MeshRenderer>().sortingOrder = 100;
     }
 
     // Update is called once per frame
@@ -15,9 +15,5 @@ public class DoorHandle : MonoBehaviour
     {
         
     }
-
-    private void OnMouseEnter()
-    {
-        Debug.Log("Open door");
-    }
+    
 }
