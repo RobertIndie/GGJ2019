@@ -1162,8 +1162,9 @@ GameObject:
   m_Component:
   - component: {fileID: 627416986}
   - component: {fileID: 627416987}
+  - component: {fileID: 627416988}
   m_Layer: 0
-  m_Name: "\u76F8\u7247"
+  m_Name: Photo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,6 +1232,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &627416988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627416985}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24858303, y: 0.15541469, z: 0.2}
+  m_Center: {x: -0.64192533, y: -0.12454801, z: 0}
 --- !u!1001 &628277185
 PrefabInstance:
   m_ObjectHideFlags: 0

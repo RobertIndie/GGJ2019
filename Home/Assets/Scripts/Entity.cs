@@ -42,7 +42,7 @@ public class Entity : MonoBehaviour
         {
             StartCoroutine(ShowBuble("robert"));
         }
-       
+
     }
     
     void idle()
