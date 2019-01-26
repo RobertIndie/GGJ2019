@@ -10,6 +10,7 @@ public class Manager : MonoBehaviour
 {
     public GameObject m_BackScene;
     public GameObject m_FrontScene;
+    public GameObject m_Effect;
     public static Manager instance;
     [System.Serializable]
     public struct BubleItem
@@ -70,4 +71,10 @@ public class Manager : MonoBehaviour
         }
     }
     
+    IEnumerator AwakePlot()
+    {
+        m_Effect.GetComponent<Effect>().startDarkChange();
+        yield return new WaitForSeconds(4f);
+        m_Effect.GetComponent<Effect>().endDarkChange();
+    }
 }

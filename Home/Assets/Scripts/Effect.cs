@@ -13,21 +13,14 @@ public class Effect : MonoBehaviour
     }
     private float nowTime;
     private bool display;
+    public GameObject m_ImageObject;
     private Image image;
     private bool flag;
-
-    public bool DarkChange
+    
+     void Awake()
     {
-        set
-        {
-            if (value) startDarkChange();
-            else endDarkChange();
-        }
-    }
-
-     void Start()
-    {
-        image = GetComponentInChildren<Image>();
+        m_ImageObject.SetActive(true);
+        image = m_ImageObject.GetComponent<Image>();
         image.transform.localScale = new Vector3(1920f / Screen.width, 1080f / Screen.height, 1);
         image.color = new Color(0, 0, 0, 0.5f);
     }
