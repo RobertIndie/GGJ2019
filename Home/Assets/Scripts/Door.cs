@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     public GameObject m_Tip;
     public bool m_IsEntered;
+    public Manager.ManagerScene m_DestScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-        Debug.Log("Open door");
+        Manager.instance.ChangeScene(m_DestScene);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

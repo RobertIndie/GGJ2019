@@ -7,7 +7,13 @@ public class Room : MonoBehaviour
     public bool m_IsEntered = false;
     public GameObject m_Shadow;
     public AnimationCurve m_ShadowChangeCurve;
-    public float m_CurveTimeLength = 1f;
+    float m_CurveTimeLength
+    {
+        get
+        {
+            return m_ShadowChangeCurve.keys[m_ShadowChangeCurve.length - 1].time;
+        }
+    }
     private float m_ShadowChangeStopTime;
     // Start is called before the first frame update
     void Start()
