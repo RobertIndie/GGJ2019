@@ -62,6 +62,7 @@ public class Manager : MonoBehaviour
         if (director.playableAsset == GetPlot("Awake"))
         {
             wife.SetActive(true);
+            player.SetActive(false);
         }
     }
 
