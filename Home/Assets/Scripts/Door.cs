@@ -25,6 +25,11 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
+        if (m_DestScene == Manager.ManagerScene.Out)
+        {
+            Debug.Log("开外面门");
+            return;
+        }
         Manager.instance.ChangeScene(m_DestScene);
     }
 

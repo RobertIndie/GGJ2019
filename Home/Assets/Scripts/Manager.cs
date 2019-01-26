@@ -39,6 +39,9 @@ public class Manager : MonoBehaviour
     public List<GameObject> m_MatureRooms;
     public List<GameObject> m_OldRooms;
     public GameObject m_prefab_BubleParent;
+    public GameObject m_LivingRoomOld;
+    public GameObject m_BedRoomYountWithoutBed;
+    public GameObject m_BedRoomOld;
     public GameObject GetBubleContent(string bubleName)
     {
         GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
@@ -66,6 +69,10 @@ public class Manager : MonoBehaviour
             player.SetActive(false);
             m_Camera.GetComponent<SimpleCameraFollow>().player = wife;
             m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+            ChangePeriod(Period.Young);
+            //GameObject.Find("BedRoomYoung").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            //GameObject.Find("BedRoomYoung").SetActive(false);
+            GameObject.Find("BedRoomYoungWithoutBed").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
     }
 
@@ -88,7 +95,7 @@ public class Manager : MonoBehaviour
     }
     public enum ManagerScene
     {
-        Front,Back
+        Front,Back,Out//外面的门
     }
     public enum Period
     {
@@ -128,9 +135,12 @@ public class Manager : MonoBehaviour
     
     IEnumerator AwakePlot()
     {
+        GameObject.Find("BedRoomYoungWithoutBed").SetActive(false);
         m_Effect.GetComponent<Effect>().startDarkChange();
         yield return new WaitForSeconds(4f);
         m_Effect.GetComponent<Effect>().endDarkChange();
+        //GameObject.Find("BedRoomYoungWithoutBed").SetActive(true);
+        m_BedRoomYountWithoutBed.SetActive(true);
         director.Play(GetPlot("Awake"));
     }
 
