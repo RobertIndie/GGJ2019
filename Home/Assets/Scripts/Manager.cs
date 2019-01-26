@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Playables;
 
 /// <summary>
 /// 管理关卡类
@@ -12,6 +13,8 @@ public class Manager : MonoBehaviour
     public GameObject m_FrontScene;
     public GameObject m_Effect;
     public static Manager instance;
+    public PlayableDirector director;
+    public GameObject player;
     [System.Serializable]
     public struct BubleItem
     {
@@ -19,6 +22,17 @@ public class Manager : MonoBehaviour
         public GameObject bubleObject;
     }
     public List<BubleItem> m_bubles;
+    [System.Serializable]
+    public struct PlotItem
+    {
+        public string plotName;
+        public PlayableAsset asset;
+    }
+    public List<PlotItem> m_plots;
+    public PlayableAsset GetPlot(string plotName)
+    {
+        return (from i in m_plots where i.plotName == plotName select i.asset).First();
+    }
     public GameObject m_prefab_BubleParent;
     public GameObject GetBubleContent(string bubleName)
     {
@@ -34,12 +48,14 @@ public class Manager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         ChangeScene(ManagerScene.Front);
+        StartCoroutine(AwakePlot());
     }
 
     // Update is called once per frame
@@ -76,5 +92,6 @@ public class Manager : MonoBehaviour
         m_Effect.GetComponent<Effect>().startDarkChange();
         yield return new WaitForSeconds(4f);
         m_Effect.GetComponent<Effect>().endDarkChange();
+        director.Play(GetPlot("Awake"));
     }
 }

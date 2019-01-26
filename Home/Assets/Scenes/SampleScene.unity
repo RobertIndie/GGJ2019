@@ -2277,6 +2277,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1001096094}
   - component: {fileID: 1001096095}
+  - component: {fileID: 1001096097}
+  - component: {fileID: 1001096096}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2313,12 +2315,56 @@ MonoBehaviour:
   m_BackScene: {fileID: 648075223}
   m_FrontScene: {fileID: 2130416526}
   m_Effect: {fileID: 1152760673}
+  director: {fileID: 0}
   m_bubles:
   - bubleName: robert
     bubleObject: {fileID: 354575982300645605, guid: 3884d8988228287458bf571ec6a9b5d0,
       type: 3}
+  m_plots:
+  - plotName: Awake
+    asset: {fileID: 11400000, guid: 267e54853d3e03444bdac28aa0cd80c9, type: 2}
   m_prefab_BubleParent: {fileID: 793387312313534062, guid: 2570402b02dd46f4eacef8630f038269,
     type: 3}
+--- !u!95 &1001096096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001096093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &1001096097
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001096093}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 267e54853d3e03444bdac28aa0cd80c9, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 114397590024914108, guid: 25a1f29eccb199548af9dec0a69d41e7, type: 2}
+    value: {fileID: 1001096096}
+  - key: {fileID: 114094965000040792, guid: 267e54853d3e03444bdac28aa0cd80c9, type: 2}
+    value: {fileID: 2000183601}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1001 &1116759656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4124,6 +4170,7 @@ GameObject:
   - component: {fileID: 2000183598}
   - component: {fileID: 2000183597}
   - component: {fileID: 2000183600}
+  - component: {fileID: 2000183601}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4210,6 +4257,26 @@ MonoBehaviour:
   player: {fileID: 2060107325}
   speed: 2
   maxPosx: 1
+  isControllable: 0
+--- !u!95 &2000183601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000183596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2009069605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,7 +4728,7 @@ PrefabInstance:
     - target: {fileID: 3074012830932176065, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2
+      value: 10.85
       objectReference: {fileID: 0}
     - target: {fileID: 3074012830932176065, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
