@@ -15,6 +15,7 @@ public class Manager : MonoBehaviour
     public static Manager instance;
     public PlayableDirector director;
     public GameObject player;
+    public GameObject wife;
     public GameObject m_Camera;
     [System.Serializable]
     public struct BubleItem
