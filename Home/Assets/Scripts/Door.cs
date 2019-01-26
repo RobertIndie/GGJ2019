@@ -16,6 +16,15 @@ public class Door : MonoBehaviour
     void Update()
     {
         m_Tip.SetActive(m_IsEntered);
+        if (m_IsEntered && Input.GetKeyDown(KeyCode.W))
+        {
+            Open();
+        }
+    }
+
+    public void Open()
+    {
+        Debug.Log("Open door");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
