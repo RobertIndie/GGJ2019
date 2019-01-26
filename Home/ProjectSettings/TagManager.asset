@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DoorHandle
+  - Effect
   layers:
   - Default
   - TransparentFX
