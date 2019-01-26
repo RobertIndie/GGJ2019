@@ -1078,6 +1078,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BubleParent
       objectReference: {fileID: 0}
+    - target: {fileID: 793387312313534062, guid: 2570402b02dd46f4eacef8630f038269,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5684792851972493838, guid: 2570402b02dd46f4eacef8630f038269,
         type: 3}
       propertyPath: m_LocalPosition.x
