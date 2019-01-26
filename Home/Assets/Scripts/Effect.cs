@@ -20,6 +20,7 @@ public class Effect : MonoBehaviour
     {
         image = GetComponentInChildren<Image>();
         image.transform.localScale = new Vector3(1920f / Screen.width, 1080f / Screen.height, 1);
+        image.color = new Color(0, 0, 0, 0.5f);
     }
     
      void Update()
