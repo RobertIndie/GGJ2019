@@ -15,7 +15,7 @@ public class SimpleCameraFollow : MonoBehaviour
         {
             //predictionPlayerMoveVector();
             //FixCameraPos();
-            transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+            transform.position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         }
 
         void predictionPlayerMoveVector()
