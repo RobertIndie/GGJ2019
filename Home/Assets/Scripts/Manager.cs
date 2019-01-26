@@ -52,6 +52,11 @@ public class Manager : MonoBehaviour
     }
     public void ChangeScene(ManagerScene ms)
     {
+        var o = GameObject.FindGameObjectsWithTag("Shadow");
+        foreach (var g in o)
+        {
+            g.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+        }
         switch (ms)
         {
             case ManagerScene.Back:

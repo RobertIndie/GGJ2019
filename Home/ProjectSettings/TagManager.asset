@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DoorHandle
   - Effect
+  - Shadow
   layers:
   - Default
   - TransparentFX
