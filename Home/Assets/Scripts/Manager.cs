@@ -63,6 +63,8 @@ public class Manager : MonoBehaviour
         {
             wife.SetActive(true);
             player.SetActive(false);
+            m_Camera.GetComponent<SimpleCameraFollow>().player = wife;
+            m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         }
     }
 
