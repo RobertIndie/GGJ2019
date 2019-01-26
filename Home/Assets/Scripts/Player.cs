@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
         var t = Time.deltaTime * speed;
         if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
         {
-            transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
-            //rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
+            //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
+            rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
         }
     }
 
