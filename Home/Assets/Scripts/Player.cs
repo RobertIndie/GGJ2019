@@ -32,4 +32,9 @@ public class Player : Entity
                 break;
         }
     }
+
+    public void DisControl()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+    }
 }

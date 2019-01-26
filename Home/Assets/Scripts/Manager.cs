@@ -54,6 +54,15 @@ public class Manager : MonoBehaviour
     {
         instance = this;
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        director.stopped += OnDirectorStopped;
+    }
+
+    void OnDirectorStopped(PlayableDirector director)
+    {
+        if (director.playableAsset == GetPlot("Awake"))
+        {
+            wife.SetActive(true);
+        }
     }
 
     // Start is called before the first frame update
