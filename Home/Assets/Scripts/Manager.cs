@@ -157,6 +157,12 @@ public class Manager : MonoBehaviour
     {
         ChangePeriod(Period.Mature);
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        player.transform.position = new Vector3(2.5f, 0.73f, 0f);
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+    }
+
+    void SonComeIn()
+    {
+
     }
 }

@@ -42,4 +42,14 @@ public class Player : Entity
     {
         GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.name)
+        {
+            case "3T1":
+
+                break;
+        }
+    }
 }

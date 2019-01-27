@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     
     Rigidbody2D rigidbody2D;
-    protected Vector2 moveDest;
+    public Vector2 moveDest;
     public float speed = 1f;
     public GameObject m_buble;
         
