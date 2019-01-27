@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     public GameObject m_Camera;
     public GameObject m_workSon;
     public GameObject m_ThirdTriggers;
+    public List<GameObject> m_Relatives;
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -156,6 +157,18 @@ public class Manager : MonoBehaviour
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         ChangePeriod(Period.Old);
+    }
+
+    void ObjectSetMoveDestTo(GameObject g, float x)
+    {
+        g.GetComponent<Entity>().moveDest = new Vector2(x, g.transform.position.y);
+    }
+
+    public void RelativesComeIn()
+    {
+        ObjectSetMoveDestTo(m_Relatives[0], -4.7f);
+        ObjectSetMoveDestTo(m_Relatives[0], -5.74f);
+        ObjectSetMoveDestTo(m_Relatives[0], -7.12f);
     }
 
     void EnterSessionThree()
