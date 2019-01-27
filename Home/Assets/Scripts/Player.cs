@@ -11,7 +11,7 @@ public class Player : Entity
     {
         base.Update();
         bool isUsed = false;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&isControllable)
         {
             //Debug.Log("worldPos:"+worldPos);
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
