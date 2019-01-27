@@ -239,4 +239,11 @@ public class Manager : MonoBehaviour
         player.GetComponent<Player>().isControllable = false;
         StartCoroutine(SonComeInCor());
     }
+
+    public static void LoadBackScene()
+    {
+        instance?.m_BedRoomCollider.SetActive(false);
+        instance?.ChangeScene(ManagerScene.Front);
+        instance?.EnterSessionThree();
+    }
 }
