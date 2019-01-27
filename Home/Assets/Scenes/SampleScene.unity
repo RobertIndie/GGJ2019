@@ -2122,6 +2122,12 @@ Transform:
   m_Father: {fileID: 2130416527}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919624011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7653288686329361862, guid: 465c268b93f02cb41874d5f1ced05eb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1195313876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &943765686 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2455825099465352133, guid: f0e06fd24c30f3b4ebf825d63f11f67f,
@@ -2373,6 +2379,8 @@ MonoBehaviour:
   m_LivingRoomOld: {fileID: 2075431977}
   m_BedRoomYountWithoutBed: {fileID: 773561026}
   m_BedRoomOld: {fileID: 1555266401}
+  door: {fileID: 919624011}
+  outDoor: {fileID: 0}
 --- !u!95 &1001096096
 Animator:
   serializedVersion: 3

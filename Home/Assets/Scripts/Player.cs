@@ -64,4 +64,12 @@ public class Player : Entity
                 break;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name== "BedRoomCollider")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SecondScenes");
+        }
+    }
 }
