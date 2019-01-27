@@ -92,9 +92,9 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
-        EnterSessionOne();
+        //EnterSessionOne();
         //EnterSessionTwo();
-        //EnterSessionThree();
+        EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -196,12 +196,16 @@ public class Manager : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         StartCoroutine(wife.GetComponent<Entity>().ShowBuble("起床"));
     }
-
+    public GameObject m_MaturePlayer;
     void EnterSessionThree()
     {
         ChangePeriod(Period.Mature);
+        player.SetActive(false);
+        m_MaturePlayer.SetActive(true);
+        player = m_MaturePlayer;
+        m_Camera.GetComponent<SimpleCameraFollow>().player = m_MaturePlayer;
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        player.transform.position = new Vector3(2.5f, 0.73f, 0f);
+        //player.transform.position = new Vector3(2.5f, 0.73f, 0f);
         player.GetComponent<Entity>().moveDest = player.transform.position;
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         m_ThirdTriggers.SetActive(true);
