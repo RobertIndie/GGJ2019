@@ -7,13 +7,13 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: NPC4Walk
-  m_Controller: {fileID: 9100000, guid: 40a432df2d38dc64ba8d5527011e7a4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f44ee9e27bfe5634fbc3691796686f90, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 4b7933e4127766b42993f955b20e31d8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 67629fadd8549964687ba988c4a7eda8, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 96b1c0d3d09521442b73e35b7f46987f, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: ef5c38dd576baa040b7f3e93de131637, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b995f821bb591c4c81f70a824d68585, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: ae728f100e67f8d45a85a5e99bda1470, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 845a0d3e49d81e14b9ce767bc3a8d803, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0a63f821ca937d54897e066aa2ef8361, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 82e00afd9602e7e458d1b12f5883e211, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: ca3d3c68fee322d4abc505b5b0e9a3d6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b869604cd9213f14aaedbba0f95428e5, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: fec2bd94481f84c4d9945b6c63a2c2a6, type: 2}
