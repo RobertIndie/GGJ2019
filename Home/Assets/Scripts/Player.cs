@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : Entity
 {
@@ -22,32 +23,32 @@ public class Player : Entity
             for (int i = 0; i < hits.Length; i++)
             {
                 isUsed = true;
-                Handle(hits[i]);
+                StartCoroutine(Handle(hits[i]));
             }
 
             if (!isUsed) moveDest = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
 
-    public void Handle(RaycastHit hit)
+    public IEnumerator Handle(RaycastHit hit)
     {
         if (Mathf.Abs(gameObject.transform.position.x - hit.transform.position.x) < 2)
             switch (hit.collider.name)
             {
                 case "photo":
 
-//                    var effectObject = GameObject.FindWithTag("Effect");
-//                    Effect effect = effectObject.GetComponent<Effect>();
-//                    effect.loopDarkChange(1);
+                    var effectObject = GameObject.FindWithTag("Effect");
                     var scenes = GameObject.FindObjectOfType<SecondScenesManager>();
+                    Effect effect = effectObject.GetComponent<Effect>();
+                    effect.loopDarkChange(1);
+
+                    var graduation = scenes.getGraduation().GetComponent<Graduation>();
+                    graduation.showPhoto();
+                    yield return new WaitForSeconds(3);
+                    effect.loopDarkChange(1);
+                    graduation.hidePhoto();
+                    
                     scenes.startScenesOne = true;
-                    
-                    
-                    
-//                    var gameObject = GameObject.Find("Manager");
-//                    if (gameObject == null)
-//                        break;
-//                    gameObject.GetComponent<SecondScenesManager>().startScenesOne = true;
                     break;
             }
     }

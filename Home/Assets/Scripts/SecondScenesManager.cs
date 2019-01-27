@@ -12,7 +12,8 @@ public class SecondScenesManager : MonoBehaviour
     public GameObject livingRoomMature;
     public GameObject oldPieter;
     public GameObject livingRoomOld;
-
+    public GameObject graduation;
+    
     public GameObject m_Backs;
     public GameObject m_Fronts;
 
@@ -82,8 +83,6 @@ public class SecondScenesManager : MonoBehaviour
             door.cancel = true;
             door.cancelBoble = "开门";
         }
-        
-        
     }
 
     void setPlayer(GameObject gameObject)
@@ -94,6 +93,11 @@ public class SecondScenesManager : MonoBehaviour
     void knockingDoor()
     {
         
+    }
+
+    public GameObject getGraduation()
+    {
+        return graduation;
     }
     
 }

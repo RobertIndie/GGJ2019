@@ -11,6 +11,7 @@ TagManager:
   - Mature
   - Old
   - Door
+  - Graduation
   layers:
   - Default
   - TransparentFX
