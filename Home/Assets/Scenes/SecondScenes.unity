@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 2235756334572883570, guid: f725bc7db9fb7e645b390dd18cb1b94a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2235756333633711740, guid: f725bc7db9fb7e645b390dd18cb1b94a,
         type: 3}
@@ -237,11 +237,86 @@ PrefabInstance:
     - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].time
+      value: 2.0066075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].value
+      value: 0.39819568
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[0].value
+      value: 0.39239502
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[0].time
+      value: 0.010463715
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].time
+      value: 0.91438985
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].value
+      value: 1.0541124
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].inSlope
+      value: -0.007966406
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].outSlope
+      value: -0.007966406
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[1].outWeight
+      value: 0.5342535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].inWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756333633711741, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: darkCurve.m_Curve.Array.data[2].outWeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2235756334572883568, guid: f725bc7db9fb7e645b390dd18cb1b94a,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235756334572883568, guid: f725bc7db9fb7e645b390dd18cb1b94a,
+        type: 3}
+      propertyPath: m_UseSpriteMesh
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -545,6 +620,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230088302235566411, guid: 85fb6fc6346e7ec489f189a19f8604e6,
+        type: 3}
+      propertyPath: smooth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4230088302235566410, guid: 85fb6fc6346e7ec489f189a19f8604e6,
         type: 3}

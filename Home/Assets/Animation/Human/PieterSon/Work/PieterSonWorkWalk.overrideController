@@ -7,13 +7,13 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PieterSonWorkWalk
-  m_Controller: {fileID: 9100000, guid: 40a432df2d38dc64ba8d5527011e7a4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: f44ee9e27bfe5634fbc3691796686f90, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 4b7933e4127766b42993f955b20e31d8, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 0d00f91eaf0919d4dbb6f89be9920bff, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: ef5c38dd576baa040b7f3e93de131637, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 43069595b85664340873dc8903a07243, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 845a0d3e49d81e14b9ce767bc3a8d803, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1f3a9344835726549b2b409487aa2723, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: ca3d3c68fee322d4abc505b5b0e9a3d6, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 62f1c767b6e67684f9378b2d2bc54ff3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 67629fadd8549964687ba988c4a7eda8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ac273bee5455e7245a5d4bd6b1445c34, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b995f821bb591c4c81f70a824d68585, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bde8d8c7c52cb2c4ca0234332674de13, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0a63f821ca937d54897e066aa2ef8361, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e4aad85ac2eb00a40babe9b7fc3f9327, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b869604cd9213f14aaedbba0f95428e5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a44988c0b942b8d4ab69a6a5de02de12, type: 2}

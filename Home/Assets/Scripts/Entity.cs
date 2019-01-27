@@ -13,11 +13,14 @@ public class Entity : MonoBehaviour
     public bool stop;
     public bool rightWalk;
     public bool leftWalk;
+
+    public bool canNotUseMask;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         moveDest = transform.position;
+        if(!canNotUseMask)
         GetComponent<SpriteRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
     }
 
@@ -71,7 +74,7 @@ public class Entity : MonoBehaviour
         moveDest = transform.position;
     }
 
-    IEnumerator ShowBuble(string bubleName)
+    public IEnumerator ShowBuble(string bubleName)
     {
         m_buble.SetActive(true);
         GameObject go = Manager.instance.GetBubleContent(bubleName);

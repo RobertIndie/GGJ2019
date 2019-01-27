@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3074012830932176063, guid: 3892916e352a58a488b599a520007efe,
+        type: 3}
+      propertyPath: canNotUseMask
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3892916e352a58a488b599a520007efe, type: 3}
 --- !u!1 &594375062
@@ -488,6 +493,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1109029520087073980, guid: 14b1d4e95126de74eabcb3e8d75a8169,
+        type: 3}
+      propertyPath: canNotUseMask
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14b1d4e95126de74eabcb3e8d75a8169, type: 3}
 --- !u!1001 &2767703520116401972
@@ -556,6 +566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767703520236663788, guid: 09b92009cf3b5e74fba36f2166676925,
+        type: 3}
+      propertyPath: canNotUseMask
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09b92009cf3b5e74fba36f2166676925, type: 3}
@@ -626,7 +641,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3201243563938705753, guid: 72e79f248111aa540838aacac0e30951,
+        type: 3}
+      propertyPath: canNotUseMask
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3201243563938705753, guid: 72e79f248111aa540838aacac0e30951, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 72e79f248111aa540838aacac0e30951, type: 3}
 --- !u!1001 &8998384375852318162
 PrefabInstance:
@@ -695,5 +716,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8998384376051911738, guid: b081de9cc10d7c64ab396242452f8bf0,
+        type: 3}
+      propertyPath: canNotUseMask
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8998384376051911738, guid: b081de9cc10d7c64ab396242452f8bf0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b081de9cc10d7c64ab396242452f8bf0, type: 3}
