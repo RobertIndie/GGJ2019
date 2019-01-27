@@ -18,13 +18,15 @@ public class Manager : MonoBehaviour
     public GameObject wife;
     public GameObject m_Camera;
     public GameObject m_workSon;
-    [System.Serializable]
-    public struct BubleItem
-    {
-        public string bubleName;
-        public GameObject bubleObject;
-    }
-    public List<BubleItem> m_bubles;
+    public GameObject m_ThirdTriggers;
+    //[System.Serializable]
+    //public struct BubleItem
+    //{
+    //    public string bubleName;
+    //    public GameObject bubleObject;
+    //}
+    //public List<BubleItem> m_bubles;
+    public List<GameObject> m_bubles;
     [System.Serializable]
     public struct PlotItem
     {
@@ -45,12 +47,14 @@ public class Manager : MonoBehaviour
     public GameObject m_BedRoomOld;
     public GameObject GetBubleContent(string bubleName)
     {
-        GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
-        GameObject buble = Instantiate(bublePrefab);
+        //GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
+        //GameObject buble = Instantiate(bublePrefab);
         //GameObject bubleParent = Instantiate(m_prefab_BubleParent);
         //buble.transform.parent = bubleParent.GetComponentInChildren<SpriteRenderer>().transform.parent;
         //buble.transform.position = Vector3.zero;
         //return bubleParent;
+        GameObject bublePrefab = (from b in m_bubles where b.name == bubleName select b).First();
+        GameObject buble = Instantiate(bublePrefab);
         return buble;
     }
 
@@ -82,9 +86,9 @@ public class Manager : MonoBehaviour
     void Start()
     {
         ChangeScene(ManagerScene.Front);
-        //EnterSessionOne();
+        EnterSessionOne();
         //EnterSessionTwo();
-        EnterSessionThree();
+        //EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -161,15 +165,29 @@ public class Manager : MonoBehaviour
         player.transform.position = new Vector3(2.5f, 0.73f, 0f);
         player.GetComponent<Entity>().moveDest = player.transform.position;
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+        m_ThirdTriggers.SetActive(true);
     }
 
     IEnumerator SonComeInCor()
     {
         var entity = m_workSon.GetComponent<Entity>();
         entity.moveDest = new Vector2(-7, 2.84f);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x) < 0.1);
+        var p = player.GetComponent<Player>();
+        entity.BeginShowBuble("职场晋升");
+        yield return new WaitForSeconds(2f);
+        entity.EndShowBuble();
+        p.BeginShowBuble("赞许");
+        yield return new WaitForSeconds(2f);
+        p.EndShowBuble();
+        entity.BeginShowBuble("出国");
+        yield return new WaitForSeconds(2f);
+        entity.EndShowBuble();
+        p.BeginShowBuble("赞许");
+        yield return new WaitForSeconds(2f);
+        p.EndShowBuble();
         entity.moveDest = new Vector2(2.56f, 2.84f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         player.GetComponent<Player>().moveDest.x = player.transform.position.x + 0.5f;
         yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x)<0.1);
         entity.gameObject.SetActive(false);
