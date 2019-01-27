@@ -59,14 +59,14 @@ public class Entity : MonoBehaviour
         leftWalk = false;
     }
 
-    void RightWalk()
+    public void RightWalk()
     {
         stop = false;
         rightWalk = true;
         leftWalk = false;
     }
 
-    void LeftWalk()
+    public void LeftWalk()
     {
         stop = false;
         rightWalk = false;
