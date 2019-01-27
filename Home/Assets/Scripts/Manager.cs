@@ -159,9 +159,16 @@ public class Manager : MonoBehaviour
         ChangePeriod(Period.Old);
     }
 
+    void ObjectSetMoveDestTo(GameObject g, float x)
+    {
+        g.GetComponent<Entity>().moveDest = new Vector2(x, g.transform.position.y);
+    }
+
     public void RelativesComeIn()
     {
-
+        ObjectSetMoveDestTo(m_Relatives[0], -4.7f);
+        ObjectSetMoveDestTo(m_Relatives[0], -5.74f);
+        ObjectSetMoveDestTo(m_Relatives[0], -7.12f);
     }
 
     void EnterSessionThree()
