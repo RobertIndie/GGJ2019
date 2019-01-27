@@ -170,8 +170,8 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(true);
         ObjectSetMoveDestTo(m_Relatives[0], -4.7f);
-        ObjectSetMoveDestTo(m_Relatives[0], -5.74f);
-        ObjectSetMoveDestTo(m_Relatives[0], -7.12f);
+        ObjectSetMoveDestTo(m_Relatives[1], -5.74f);
+        ObjectSetMoveDestTo(m_Relatives[2], -7.12f);
     }
 
     void EnterSessionThree()
