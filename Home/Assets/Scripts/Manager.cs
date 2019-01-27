@@ -234,7 +234,13 @@ public class Manager : MonoBehaviour
         GameObject.Find("3T1")?.SetActive(false);
         yield return new WaitForSeconds(1f);
         EndSon.transform.position = new Vector3(1.76f, 2.96f, 0);
+        player.transform.position = new Vector3(4.24f, 0.81f, 0);
+        player.GetComponent<Player>().moveDest = player.transform.position;
+        player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        player.GetComponent<Player>().isControllable = false;
         EndSon.GetComponent<Entity>().moveDest.x = -15;
+        yield return new WaitForSeconds(4f);
+        player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
     }
 
     public void SonComeIn()
