@@ -207,6 +207,7 @@ public class Manager : MonoBehaviour
         m_ThirdTriggers.SetActive(true);
     }
     public GameObject EndSon;
+    public GameObject TheEnd;
     IEnumerator SonComeInCor()
     {
         var entity = m_workSon.GetComponent<Entity>();
@@ -234,7 +235,16 @@ public class Manager : MonoBehaviour
         GameObject.Find("3T1")?.SetActive(false);
         yield return new WaitForSeconds(1f);
         EndSon.transform.position = new Vector3(1.76f, 2.96f, 0);
-        EndSon.GetComponent<Entity>().moveDest.x = -15;
+        //player.transform.position = new Vector3(4.24f, 0.81f, 0);
+        //player.GetComponent<Player>().moveDest = player.transform.position;
+        //player.transform.rotation = new Quaternion(0, 0, 0, 0);
+        player.GetComponent<Player>().isControllable = false;
+        EndSon.GetComponent<Entity>().moveDest.x = -30;
+        yield return new WaitForSeconds(4f);
+        player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        m_Camera.GetComponent<SimpleCameraFollow>().isControllable = false;
+        TheEnd.SetActive(true);
+        TheEnd.GetComponent<PlayableDirector>().Play();
     }
 
     public void SonComeIn()
