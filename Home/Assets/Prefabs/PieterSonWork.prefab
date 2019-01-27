@@ -101,6 +101,8 @@ MonoBehaviour:
   stop: 0
   rightWalk: 0
   leftWalk: 0
+  canNotUseMask: 1
+  isControllable: 1
 --- !u!114 &3201243563938705734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +127,7 @@ Animator:
   m_GameObject: {fileID: 3201243563938705732}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 33865a78595048546aa80ba9c0dca3ee, type: 2}
+  m_Controller: {fileID: 22100000, guid: 63bf614ff68cd5340b5bfcbe25a16a3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
