@@ -35,10 +35,16 @@ public class Player : Entity
             switch (hit.collider.name)
             {
                 case "photo":
-                    var gameObject = GameObject.Find("Manager");
-                    if (gameObject == null)
-                        break;
-                    gameObject.GetComponent<SecondScenesManager>().startScenesOne = true;
+
+                    var effectObject = GameObject.FindWithTag("Effect");
+                    Effect effect = effectObject.GetComponent<Effect>();
+                    effect.loopDarkChange(1);
+                    
+                    
+//                    var gameObject = GameObject.Find("Manager");
+//                    if (gameObject == null)
+//                        break;
+//                    gameObject.GetComponent<SecondScenesManager>().startScenesOne = true;
                     break;
             }
     }
