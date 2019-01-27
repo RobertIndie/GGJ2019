@@ -32,11 +32,11 @@ public class Door2 : Door
             {
                 falg = false;
                 son.LeftWalk();
-                son.ShowBuble("你好");
-                yield return new WaitForSeconds(2);
-                pieter.ShowBuble("你好");
-                yield return new WaitForSeconds(2);
-                son.ShowBuble("行李");
+//                yield return son.ShowBuble("你好");
+//                yield return new WaitForSeconds(2);
+//                yield return pieter.ShowBuble("你好");
+//                yield return new WaitForSeconds(2);
+//                yield return son.ShowBuble("行李");
                 yield return new WaitForSeconds(2);
                 goTo(son, 6.48f);
 

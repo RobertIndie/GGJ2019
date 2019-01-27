@@ -1129,7 +1129,7 @@ PrefabInstance:
     - target: {fileID: 3074012830932176063, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3074012830932176066, guid: 3892916e352a58a488b599a520007efe, type: 3}
@@ -2006,6 +2006,7 @@ MonoBehaviour:
   - {fileID: 535132758}
   - {fileID: 504260623}
   - {fileID: 897067538}
+  - {fileID: 13252602}
   knockingDoorSource: {fileID: 0}
   startScenesOne: 0
 --- !u!95 &1209391780

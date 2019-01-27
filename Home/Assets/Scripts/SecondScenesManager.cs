@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SecondScenesManager : MonoBehaviour
 {
-
     public GameObject camera;
     public GameObject photo;
     public GameObject door;
@@ -13,7 +12,7 @@ public class SecondScenesManager : MonoBehaviour
     public GameObject oldPieter;
     public GameObject livingRoomOld;
     public GameObject graduation;
-    
+
     public GameObject m_Backs;
     public GameObject m_Fronts;
 
@@ -33,25 +32,36 @@ public class SecondScenesManager : MonoBehaviour
                 break;
         }
     }
-    
+
     public Door[] doors;
-    
+
     public AudioSource knockingDoorSource;
-    
+
     public bool startScenesOne;
 
     void Awake()
     {
         instance = this;
     }
-    
-    void Start()
+
+    void Update()
     {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            StartCoroutine(change());
+        }
     }
-    
-    
-    
-    
+
+    IEnumerator change()
+    {
+        var effectObject = GameObject.FindWithTag("Effect");
+        Effect effect = effectObject.GetComponent<Effect>();
+        yield return new WaitForSeconds(0.7f);
+        effect.loopDarkChange(1);
+        Manager.LoadBackScene();
+    }
+
+
     public IEnumerator StartScenesOne()
     {
         foreach (var door in doors)
@@ -62,7 +72,7 @@ public class SecondScenesManager : MonoBehaviour
         var effectObject = GameObject.FindWithTag("Effect");
         oldPieter.GetComponent<Entity>().isControllable = false;
 //        yield return oldPieter.GetComponent<Entity>().ShowBuble("儿子");
-        yield return new WaitForSeconds(2.3f);
+//        yield return new WaitForSeconds(2.3f);
         Effect effect = effectObject.GetComponent<Effect>();
         effect.loopDarkChange(1);
         yield return new WaitForSeconds(0.7f);
@@ -77,6 +87,7 @@ public class SecondScenesManager : MonoBehaviour
         {
             door.player = muturePieter;
         }
+
         oldPieter.SetActive(false);
         livingRoomOld.SetActive(false);
         setPlayer(muturePieter);
@@ -84,7 +95,7 @@ public class SecondScenesManager : MonoBehaviour
         livingRoomMature.active = true;
         yield return new WaitForSeconds(1);
         Entity entity = muturePieter.GetComponent<Entity>();
-//        StartCoroutine(entity.ShowBuble("开门"));
+        StartCoroutine(entity.ShowBuble("开门"));
         foreach (var door in doors)
         {
             door.player = muturePieter;
@@ -100,12 +111,10 @@ public class SecondScenesManager : MonoBehaviour
 
     void knockingDoor()
     {
-        
     }
 
     public GameObject getGraduation()
     {
         return graduation;
     }
-    
 }
