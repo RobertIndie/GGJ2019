@@ -92,9 +92,9 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
-        EnterSessionOne();
+        //EnterSessionOne();
         //EnterSessionTwo();
-        //EnterSessionThree();
+        EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -206,7 +206,7 @@ public class Manager : MonoBehaviour
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         m_ThirdTriggers.SetActive(true);
     }
-
+    public GameObject EndSon;
     IEnumerator SonComeInCor()
     {
         var entity = m_workSon.GetComponent<Entity>();
@@ -232,12 +232,20 @@ public class Manager : MonoBehaviour
         entity.gameObject.SetActive(false);
         player.GetComponent<Player>().isControllable = true;
         GameObject.Find("3T1")?.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        EndSon.transform.position = new Vector3(1.76f, 2.96f, 0);
+        EndSon.GetComponent<Entity>().moveDest.x = -15;
     }
 
     public void SonComeIn()
     {
         player.GetComponent<Player>().isControllable = false;
         StartCoroutine(SonComeInCor());
+    }
+
+    public void TheEndPlot()
+    {
+        
     }
 
     public static void LoadBackScene()
