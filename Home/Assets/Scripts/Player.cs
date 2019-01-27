@@ -2,6 +2,11 @@
 
 public class Player : Entity
 {
+    private void Start()
+    {
+        base.Start();
+    }
+
     void Update()
     {
         base.Update();

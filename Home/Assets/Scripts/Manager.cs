@@ -159,16 +159,24 @@ public class Manager : MonoBehaviour
         ChangePeriod(Period.Mature);
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         player.transform.position = new Vector3(2.5f, 0.73f, 0f);
+        player.GetComponent<Entity>().moveDest = player.transform.position;
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+    }
+
+    IEnumerator SonComeInCor()
+    {
+        var entity = m_workSon.GetComponent<Entity>();
+        entity.moveDest = new Vector2(-7, 2.84f);
+        yield return new WaitForSeconds(3f);
+        entity.moveDest = new Vector2(2.56f, 2.84f);
+        yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x)<0.1);
+        entity.gameObject.SetActive(false);
+        player.GetComponent<Player>().isControllable = true;
     }
 
     public void SonComeIn()
     {
         player.GetComponent<Player>().isControllable = false;
-        m_workSon.GetComponent<PlayableDirector>().Play();
-        m_workSon.GetComponent<PlayableDirector>().stopped += (director) =>
-        {
-            player.GetComponent<Player>().isControllable = true;
-        };
+        StartCoroutine(SonComeInCor());
     }
 }
