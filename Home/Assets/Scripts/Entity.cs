@@ -77,6 +77,20 @@ public class Entity : MonoBehaviour
     {
         moveDest = transform.position;
     }
+    GameObject go;
+    public void BeginShowBuble(string bubleName)
+    {
+        m_buble.SetActive(true);
+        go = Manager.instance.GetBubleContent(bubleName);
+        go.transform.parent = m_buble.transform;
+        go.transform.localPosition = Vector3.zero;
+    }
+
+    public void EndShowBuble()
+    {
+        Destroy(go);
+        m_buble.SetActive(false);
+    }
 
     public IEnumerator ShowBuble(string bubleName)
     {
