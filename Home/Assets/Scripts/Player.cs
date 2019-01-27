@@ -48,7 +48,7 @@ public class Player : Entity
         switch (collision.gameObject.name)
         {
             case "3T1":
-
+                Manager.instance.SonComeIn();
                 break;
         }
     }

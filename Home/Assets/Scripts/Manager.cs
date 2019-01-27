@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
     public GameObject player;
     public GameObject wife;
     public GameObject m_Camera;
+    public GameObject m_workSon;
     [System.Serializable]
     public struct BubleItem
     {
@@ -161,8 +162,13 @@ public class Manager : MonoBehaviour
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
     }
 
-    void SonComeIn()
+    public void SonComeIn()
     {
-
+        player.GetComponent<Player>().isControllable = false;
+        m_workSon.GetComponent<PlayableDirector>().Play();
+        m_workSon.GetComponent<PlayableDirector>().stopped += (director) =>
+        {
+            player.GetComponent<Player>().isControllable = true;
+        };
     }
 }

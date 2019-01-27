@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     public bool leftWalk;
 
     public bool canNotUseMask;
+    public bool isControllable = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +29,23 @@ public class Entity : MonoBehaviour
     protected void Update()
     {
         var t = Time.deltaTime * speed;
-        if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
+        if (isControllable)
         {
-            //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
-            rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
-            if (moveDest.x > transform.position.x)
+            if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
             {
-                RightWalk();
-            }else
-                LeftWalk();
-        }else
-        {
-            idle();
+                //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
+                rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
+                if (moveDest.x > transform.position.x)
+                {
+                    RightWalk();
+                }
+                else
+                    LeftWalk();
+            }
+            else
+            {
+                idle();
+            }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
