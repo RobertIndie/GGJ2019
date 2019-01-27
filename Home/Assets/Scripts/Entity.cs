@@ -6,7 +6,7 @@ public class Entity : MonoBehaviour
 {
     
     Rigidbody2D rigidbody2D;
-    protected Vector2 moveDest;
+    public Vector2 moveDest;
     public float speed = 1f;
     public GameObject m_buble;
         
@@ -15,8 +15,9 @@ public class Entity : MonoBehaviour
     public bool leftWalk;
 
     public bool canNotUseMask;
+    public bool isControllable = true;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         moveDest = transform.position;
@@ -28,18 +29,23 @@ public class Entity : MonoBehaviour
     protected void Update()
     {
         var t = Time.deltaTime * speed;
-        if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
+        if (isControllable)
         {
-            //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
-            rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
-            if (moveDest.x > transform.position.x)
+            if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
             {
-                RightWalk();
-            }else
-                LeftWalk();
-        }else
-        {
-            idle();
+                //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
+                rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
+                if (moveDest.x > transform.position.x)
+                {
+                    RightWalk();
+                }
+                else
+                    LeftWalk();
+            }
+            else
+            {
+                idle();
+            }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -48,7 +54,7 @@ public class Entity : MonoBehaviour
 
     }
     
-    void idle()
+    protected void idle()
     {
         stop = true;
         rightWalk = false;

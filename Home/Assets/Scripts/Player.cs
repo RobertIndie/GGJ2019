@@ -2,6 +2,11 @@
 
 public class Player : Entity
 {
+    private void Start()
+    {
+        base.Start();
+    }
+
     void Update()
     {
         base.Update();
@@ -47,5 +52,16 @@ public class Player : Entity
     public void DisControl()
     {
         GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.name)
+        {
+            case "3T1":
+                Manager.instance.SonComeIn();
+                base.idle();
+                break;
+        }
     }
 }

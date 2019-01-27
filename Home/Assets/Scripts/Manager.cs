@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
     public GameObject player;
     public GameObject wife;
     public GameObject m_Camera;
+    public GameObject m_workSon;
     [System.Serializable]
     public struct BubleItem
     {
@@ -157,6 +158,28 @@ public class Manager : MonoBehaviour
     {
         ChangePeriod(Period.Mature);
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        player.transform.position = new Vector3(2.5f, 0.73f, 0f);
+        player.GetComponent<Entity>().moveDest = player.transform.position;
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+    }
+
+    IEnumerator SonComeInCor()
+    {
+        var entity = m_workSon.GetComponent<Entity>();
+        entity.moveDest = new Vector2(-7, 2.84f);
+        yield return new WaitForSeconds(3f);
+        entity.moveDest = new Vector2(2.56f, 2.84f);
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<Player>().moveDest.x = player.transform.position.x + 0.5f;
+        yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x)<0.1);
+        entity.gameObject.SetActive(false);
+        player.GetComponent<Player>().isControllable = true;
+        GameObject.Find("3T1")?.SetActive(false);
+    }
+
+    public void SonComeIn()
+    {
+        player.GetComponent<Player>().isControllable = false;
+        StartCoroutine(SonComeInCor());
     }
 }
