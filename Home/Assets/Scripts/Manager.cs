@@ -92,9 +92,9 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
-        //EnterSessionOne();
+        EnterSessionOne();
         //EnterSessionTwo();
-        EnterSessionThree();
+        //EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -210,6 +210,7 @@ public class Manager : MonoBehaviour
     public GameObject TheEnd;
     IEnumerator SonComeInCor()
     {
+        ChangePeriod(Period.Mature);
         var entity = m_workSon.GetComponent<Entity>();
         entity.moveDest = new Vector2(-7, 2.84f);
         yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x) < 0.1);

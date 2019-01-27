@@ -1651,7 +1651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &602395997
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,6 +1894,11 @@ PrefabInstance:
       propertyPath: m_DestScene
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3755834458980313887, guid: 37cac6841101f1244b78ab6d5647aa82,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2060107325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cac6841101f1244b78ab6d5647aa82, type: 3}
 --- !u!4 &628277186 stripped
@@ -2303,7 +2308,7 @@ PrefabInstance:
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -3199,7 +3204,7 @@ PrefabInstance:
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2893473051739186510, guid: 96850bbb0dd287a4bbe649727e4ad7e3,
         type: 3}
@@ -3773,6 +3778,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5025146313692918552, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 309362160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c268b93f02cb41874d5f1ced05eb4, type: 3}
 --- !u!1001 &1219794825
@@ -5628,6 +5638,11 @@ PrefabInstance:
       propertyPath: m_DestScene
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5025146313692918552, guid: 465c268b93f02cb41874d5f1ced05eb4,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 309362160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c268b93f02cb41874d5f1ced05eb4, type: 3}
 --- !u!1 &2000183596 stripped
@@ -6467,7 +6482,7 @@ PrefabInstance:
     - target: {fileID: 3074012830932176065, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.24
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 3074012830932176065, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
@@ -6692,5 +6707,10 @@ PrefabInstance:
       propertyPath: m_DestScene
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3755834458980313887, guid: 37cac6841101f1244b78ab6d5647aa82,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 309362160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37cac6841101f1244b78ab6d5647aa82, type: 3}
