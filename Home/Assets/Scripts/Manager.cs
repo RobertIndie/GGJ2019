@@ -55,6 +55,7 @@ public class Manager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         instance = this;
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
         director.stopped += OnDirectorStopped;
@@ -80,8 +81,9 @@ public class Manager : MonoBehaviour
     void Start()
     {
         ChangeScene(ManagerScene.Front);
-        EnterSessionOne();
+        //EnterSessionOne();
         //EnterSessionTwo();
+        EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -149,5 +151,12 @@ public class Manager : MonoBehaviour
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         ChangePeriod(Period.Old);
+    }
+
+    void EnterSessionThree()
+    {
+        ChangePeriod(Period.Mature);
+        player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
     }
 }
