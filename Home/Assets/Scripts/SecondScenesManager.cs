@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SecondScenesManager : MonoBehaviour
@@ -12,12 +13,37 @@ public class SecondScenesManager : MonoBehaviour
     public GameObject oldPieter;
     public GameObject livingRoomOld;
 
+    public GameObject m_Backs;
+    public GameObject m_Fronts;
+
+    public static SecondScenesManager instance;
+
+    public void ChangeScene(Manager.ManagerScene ms)
+    {
+        switch (ms)
+        {
+            case Manager.ManagerScene.Back:
+                m_Backs.SetActive(true);
+                m_Fronts.SetActive(false);
+                break;
+            case Manager.ManagerScene.Front:
+                m_Backs.SetActive(false);
+                m_Fronts.SetActive((true));
+                break;
+        }
+    }
+    
     public Door[] doors;
     
     public AudioSource knockingDoorSource;
     
     public bool startScenesOne;
 
+    void Awake()
+    {
+        instance = this;
+    }
+    
     void Start()
     {
     }
@@ -37,10 +63,16 @@ public class SecondScenesManager : MonoBehaviour
     
     IEnumerator StartScenesOne()
     {
+        muturePieter.active = true;
+        foreach (var door in GameObject.FindGameObjectsWithTag("Door"))
+        {
+            door.GetComponent<Door>().player = muturePieter;
+            door.GetComponent<Door>().close = 1.5f;
+        }
         Destroy(oldPieter);
         Destroy(livingRoomOld);
+        setPlayer(muturePieter);
         knockingDoor();
-        muturePieter.active = true;
         livingRoomMature.active = true;
         yield return new WaitForSeconds(1);
         Entity entity = muturePieter.GetComponent<Entity>();

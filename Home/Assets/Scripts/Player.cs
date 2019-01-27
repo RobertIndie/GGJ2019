@@ -36,9 +36,12 @@ public class Player : Entity
             {
                 case "photo":
 
-                    var effectObject = GameObject.FindWithTag("Effect");
-                    Effect effect = effectObject.GetComponent<Effect>();
-                    effect.loopDarkChange(1);
+//                    var effectObject = GameObject.FindWithTag("Effect");
+//                    Effect effect = effectObject.GetComponent<Effect>();
+//                    effect.loopDarkChange(1);
+                    var scenes = GameObject.FindObjectOfType<SecondScenesManager>();
+                    scenes.startScenesOne = true;
+                    
                     
                     
 //                    var gameObject = GameObject.Find("Manager");

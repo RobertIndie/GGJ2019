@@ -17,6 +17,8 @@ public class Door : MonoBehaviour
 
     public float close = 1.5f;
 
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,6 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.FindWithTag("Player");
         if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < close)
             m_IsClosed = true;
         else m_IsClosed = false;
@@ -48,8 +49,9 @@ public class Door : MonoBehaviour
             Manager.instance.RelativesComeIn();
             return;
         }
-
-        Manager.instance.ChangeScene(m_DestScene);
+        
+        Manager.instance?.ChangeScene(m_DestScene);
+        SecondScenesManager.instance?.ChangeScene(m_DestScene);
     }
 
     

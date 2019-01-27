@@ -10,6 +10,7 @@ TagManager:
   - Young
   - Mature
   - Old
+  - Door
   layers:
   - Default
   - TransparentFX
