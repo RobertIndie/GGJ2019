@@ -49,37 +49,45 @@ public class SecondScenesManager : MonoBehaviour
     {
     }
     
-    void Update()
+    
+    
+    
+    public IEnumerator StartScenesOne()
     {
-        if (startScenesOne)
+        foreach (var door in doors)
         {
-            StartCoroutine(StartScenesOne());
-            startScenesOne = false;
+            door.close = 1.5f;
         }
-    }
-    
-    
-    
-    
-    
-    IEnumerator StartScenesOne()
-    {
+
+        var effectObject = GameObject.FindWithTag("Effect");
+        oldPieter.GetComponent<Entity>().isControllable = false;
+//        yield return oldPieter.GetComponent<Entity>().ShowBuble("儿子");
+        yield return new WaitForSeconds(2.3f);
+        Effect effect = effectObject.GetComponent<Effect>();
+        effect.loopDarkChange(1);
+        yield return new WaitForSeconds(0.7f);
+        var graduation = getGraduation().GetComponent<Graduation>();
+        graduation.showPhoto();
+        yield return new WaitForSeconds(3);
+        effect.loopDarkChange(2);
+        yield return new WaitForSeconds(0.7f);
+        graduation.hidePhoto();
         muturePieter.active = true;
-        foreach (var door in GameObject.FindGameObjectsWithTag("Door"))
+        foreach (var door in doors)
         {
-            door.GetComponent<Door>().player = muturePieter;
-            door.GetComponent<Door>().close = 1.5f;
+            door.player = muturePieter;
         }
-        Destroy(oldPieter);
-        Destroy(livingRoomOld);
+        oldPieter.SetActive(false);
+        livingRoomOld.SetActive(false);
         setPlayer(muturePieter);
         knockingDoor();
         livingRoomMature.active = true;
         yield return new WaitForSeconds(1);
         Entity entity = muturePieter.GetComponent<Entity>();
-        entity.ShowBuble("开门");
+//        StartCoroutine(entity.ShowBuble("开门"));
         foreach (var door in doors)
         {
+            door.player = muturePieter;
             door.cancel = true;
             door.cancelBoble = "开门";
         }
