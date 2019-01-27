@@ -29,23 +29,21 @@ public class Entity : MonoBehaviour
     protected void Update()
     {
         var t = Time.deltaTime * speed;
-        if (isControllable)
+
+        if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
         {
-            if (Mathf.Abs(moveDest.x - transform.position.x) >= t)
+            //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
+            rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
+            if (moveDest.x > transform.position.x)
             {
-                //transform.position = new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y);
-                rigidbody2D.MovePosition(new Vector2(transform.position.x + (moveDest.x > transform.position.x ? t : -t), transform.position.y));
-                if (moveDest.x > transform.position.x)
-                {
-                    RightWalk();
-                }
-                else
-                    LeftWalk();
+                RightWalk();
             }
             else
-            {
-                idle();
-            }
+                LeftWalk();
+        }
+        else
+        {
+            idle();
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
