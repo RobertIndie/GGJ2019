@@ -4,43 +4,62 @@ using UnityEngine.UI;
 public class Effect : MonoBehaviour
 {
     public AnimationCurve darkCurve;
+
     private float maxTime
     {
-        get
-        {
-            return darkCurve.keys[darkCurve.keys.Length - 1].time;
-        }
+        get { return darkCurve.keys[darkCurve.keys.Length - 1].time; }
     }
+
     private float nowTime;
     private bool display;
     public GameObject m_ImageObject;
     private Image image;
     private bool flag;
-    
-     void Awake()
-     {
-         if (m_ImageObject == null)
-             return;
+    private int loopTimes = -233;
+
+
+    public float startValue = 0.5f;
+
+    void Awake()
+    {
+        if (m_ImageObject == null)
+            return;
         m_ImageObject.SetActive(true);
         image = m_ImageObject.GetComponent<Image>();
         image.transform.localScale = new Vector3(1920f / Screen.width, 2080f / Screen.height, 1);
-        image.color = new Color(0, 0, 0, 0.5f);
+        image.color = new Color(0, 0, 0, startValue);
     }
-    
-     void Update()
+
+    void Update()
     {
-        if (display||!display&&nowTime+Time.deltaTime<maxTime&&flag)
+        if (display || !display && nowTime + Time.deltaTime < maxTime && flag)
         {
             nowTime += Time.deltaTime;
-            nowTime %= maxTime;
-            if (nowTime <= 0&&display)
+            bool loopFlag = false;
+            if (nowTime >= maxTime)
+            {
+                nowTime -= maxTime;
+                loopTimes -= 1;
+                if (loopTimes != -233 && loopTimes <= 0)
+                {
+                    display = false;
+                    nowTime = maxTime;
+                    image.color = new Color(0, 0, 0, startValue);
+                    loopFlag = true;
+                }
+            }
+
+            if (nowTime <= 0 && display)
                 nowTime = 0;
-            darkChange();
+            if (!loopFlag)
+                darkChange();
         }
+
         if (Input.GetKeyDown(KeyCode.N))
         {
             startDarkChange();
         }
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             endDarkChange();
@@ -49,8 +68,21 @@ public class Effect : MonoBehaviour
 
     public void startDarkChange()
     {
+        start(true);
+    }
+
+    private void start(bool b)
+    {
+        if (b)
+            loopTimes = -233;
         display = true;
         flag = true;
+    }
+
+    public void loopDarkChange(int times)
+    {
+        loopTimes = times;
+        start(false);
     }
 
     public void endDarkChange()
@@ -60,6 +92,6 @@ public class Effect : MonoBehaviour
 
     void darkChange()
     {
-        image.color = new Color(0,0,0,darkCurve.Evaluate(nowTime));
+        image.color = new Color(0, 0, 0, darkCurve.Evaluate(nowTime));
     }
 }
