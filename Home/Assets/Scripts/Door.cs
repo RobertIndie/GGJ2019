@@ -45,7 +45,7 @@ public class Door : MonoBehaviour
     {
         if (m_DestScene == Manager.ManagerScene.Out)
         {
-            Debug.Log("开外面门");
+            this.cancel = true;
             Manager.instance.RelativesComeIn();
             return;
         }

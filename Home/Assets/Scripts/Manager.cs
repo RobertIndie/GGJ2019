@@ -20,6 +20,7 @@ public class Manager : MonoBehaviour
     public GameObject m_workSon;
     public GameObject m_ThirdTriggers;
     public List<GameObject> m_Relatives;
+    public GameObject m_BedRoomCollider;
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -46,6 +47,8 @@ public class Manager : MonoBehaviour
     public GameObject m_LivingRoomOld;
     public GameObject m_BedRoomYountWithoutBed;
     public GameObject m_BedRoomOld;
+    public GameObject door;
+    public GameObject outDoor;
     public GameObject GetBubleContent(string bubleName)
     {
         //GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
@@ -54,6 +57,7 @@ public class Manager : MonoBehaviour
         //buble.transform.parent = bubleParent.GetComponentInChildren<SpriteRenderer>().transform.parent;
         //buble.transform.position = Vector3.zero;
         //return bubleParent;
+        Debug.Log(m_bubles);
         GameObject bublePrefab = (from b in m_bubles where b.name == bubleName select b).First();
         GameObject buble = Instantiate(bublePrefab);
         return buble;
@@ -86,6 +90,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
         EnterSessionOne();
         //EnterSessionTwo();
@@ -166,9 +171,30 @@ public class Manager : MonoBehaviour
 
     public void RelativesComeIn()
     {
+        m_BedRoomCollider.SetActive(true);
+        StartCoroutine(wife.GetComponent<Entity>().ShowBuble("新年快乐"));
         ObjectSetMoveDestTo(m_Relatives[0], -4.7f);
-        ObjectSetMoveDestTo(m_Relatives[0], -5.74f);
-        ObjectSetMoveDestTo(m_Relatives[0], -7.12f);
+        m_Relatives[0].GetComponent<Entity>().speed = 4;
+        ObjectSetMoveDestTo(m_Relatives[1], -5.74f);
+        m_Relatives[1].GetComponent<Entity>().speed = 3.5f;
+        ObjectSetMoveDestTo(m_Relatives[2], -7.12f);
+        m_Relatives[2].GetComponent<Entity>().speed = 3;
+        StartCoroutine(showBuble());
+        door.GetComponent<Door>().cancel = true;
+        door.GetComponent<Door>().cancelBoble = "起床";
+        outDoor.GetComponent<Door>().cancelBoble = "起床";
+    }
+
+    IEnumerator showBuble()
+    {
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(m_Relatives[0].GetComponent<Entity>().ShowBuble("新年快乐"));
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(m_Relatives[1].GetComponent<Entity>().ShowBuble("新年快乐"));
+        yield return new WaitForSeconds(0.4f);
+        StartCoroutine(m_Relatives[2].GetComponent<Entity>().ShowBuble("新年快乐"));
+        yield return new WaitForSeconds(0.8f);
+        StartCoroutine(wife.GetComponent<Entity>().ShowBuble("起床"));
     }
 
     void EnterSessionThree()
