@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
     public GameObject m_Camera;
     public GameObject m_workSon;
     public GameObject m_ThirdTriggers;
+    public List<GameObject> m_Relatives;
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -156,6 +157,11 @@ public class Manager : MonoBehaviour
         player.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         ChangePeriod(Period.Old);
+    }
+
+    public void RelativesComeIn()
+    {
+
     }
 
     void EnterSessionThree()
