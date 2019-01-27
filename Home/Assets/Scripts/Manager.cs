@@ -20,6 +20,7 @@ public class Manager : MonoBehaviour
     public GameObject m_workSon;
     public GameObject m_ThirdTriggers;
     public List<GameObject> m_Relatives;
+    public GameObject m_BedRoomCollider;
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -86,6 +87,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
         EnterSessionOne();
         //EnterSessionTwo();
@@ -166,6 +168,7 @@ public class Manager : MonoBehaviour
 
     public void RelativesComeIn()
     {
+        m_BedRoomCollider.SetActive(true);
         ObjectSetMoveDestTo(m_Relatives[0], -4.7f);
         ObjectSetMoveDestTo(m_Relatives[0], -5.74f);
         ObjectSetMoveDestTo(m_Relatives[0], -7.12f);

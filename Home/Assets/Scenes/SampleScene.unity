@@ -954,6 +954,63 @@ PrefabInstance:
       objectReference: {fileID: 1388725221}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72e79f248111aa540838aacac0e30951, type: 3}
+--- !u!1 &374051824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374051825}
+  - component: {fileID: 374051826}
+  m_Layer: 0
+  m_Name: BedRoomCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &374051825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374051824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.49, y: -5.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1127207092}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &374051826
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374051824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16367221, y: 0.17803812}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.0543, y: 6.701909}
+  m_EdgeRadius: 0
 --- !u!1001 &450392278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2313,9 +2370,10 @@ MonoBehaviour:
   m_workSon: {fileID: 799878236}
   m_ThirdTriggers: {fileID: 1502907710}
   m_Relatives:
-  - {fileID: 0}
+  - {fileID: 2043439813}
   - {fileID: 6602808}
   - {fileID: 1631566227}
+  m_BedRoomCollider: {fileID: 374051824}
   m_bubles:
   - {fileID: 354575982300645605, guid: 3884d8988228287458bf571ec6a9b5d0, type: 3}
   - {fileID: 7287629299703997727, guid: 7880184c3b58c8f4c84c6dd4b0694fd6, type: 3}
@@ -2666,6 +2724,7 @@ Transform:
   - {fileID: 1179833000}
   - {fileID: 254309877}
   - {fileID: 109550315}
+  - {fileID: 374051825}
   m_Father: {fileID: 2130416527}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4714,6 +4773,33 @@ Transform:
   m_Father: {fileID: 648075224}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2043439813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1436963634279662227, guid: 03439ac870acd1d4b85fd077bf526feb,
+    type: 3}
+  m_PrefabInstance: {fileID: 485769104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &2043439814
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043439813}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2060107325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3074012830932176060, guid: 3892916e352a58a488b599a520007efe,

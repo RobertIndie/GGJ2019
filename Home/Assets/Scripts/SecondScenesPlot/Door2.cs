@@ -22,7 +22,7 @@ public class Door2 : Door
         pieter.isControllable = false;
         goTo(pieter,-6.65f);
         goTo(son,-4.39f);
-        
+        return null;
     }
 
 
