@@ -270,6 +270,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &109550314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109550315}
+  - component: {fileID: 109550316}
+  m_Layer: 0
+  m_Name: BedRoomMature
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109550315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109550314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.4, y: -2.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1127207092}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &109550316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109550314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 6.329155, y: -3.078206}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 13.65831, y: 7.156412}
+  m_EdgeRadius: 0
 --- !u!1 &133545539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2179,7 @@ MonoBehaviour:
   - {fileID: 773561026}
   m_MatureRooms:
   - {fileID: 1285675960}
+  - {fileID: 109550314}
   m_OldRooms:
   - {fileID: 2075431977}
   - {fileID: 1555266401}
@@ -2448,6 +2506,7 @@ Transform:
   m_Children:
   - {fileID: 1179833000}
   - {fileID: 254309877}
+  - {fileID: 109550315}
   m_Father: {fileID: 2130416527}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3279,7 +3338,7 @@ PrefabInstance:
     - target: {fileID: 5061736968195060749, guid: 2570402b02dd46f4eacef8630f038269,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5061736968195060748, guid: 2570402b02dd46f4eacef8630f038269,
         type: 3}
@@ -4897,7 +4956,7 @@ PrefabInstance:
     - target: {fileID: 7824987406565688617, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7824987406565688616, guid: 3892916e352a58a488b599a520007efe,
         type: 3}
