@@ -58,6 +58,7 @@ public class Manager : MonoBehaviour
     public GameObject door;
     public GameObject outDoor;
 
+
     public GameObject GetBubleContent(string bubleName)
     {
         //GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
@@ -101,17 +102,14 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
-<<<<<<< HEAD
         //EnterSessionTwo();
         if (falg == 1)
             EnterSessionThree();
         else
             EnterSessionOne();
-=======
         //EnterSessionOne();
         //EnterSessionTwo();
         EnterSessionThree();
->>>>>>> 91eefe61c1924c8d398cae63b9c7e3b2c56ea911
     }
 
     // Update is called once per frame

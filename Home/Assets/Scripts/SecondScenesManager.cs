@@ -15,7 +15,7 @@ public class SecondScenesManager : MonoBehaviour
 
     public GameObject m_Backs;
     public GameObject m_Fronts;
-
+    public GameObject otherFront;
     public static SecondScenesManager instance;
 
     public void ChangeScene(Manager.ManagerScene ms)
@@ -23,12 +23,12 @@ public class SecondScenesManager : MonoBehaviour
         switch (ms)
         {
             case Manager.ManagerScene.Back:
-                m_Backs.SetActive(true);
-                m_Fronts.SetActive(false);
+                m_Backs.SetActive(false);
+                m_Fronts.SetActive(true);
                 break;
             case Manager.ManagerScene.Front:
-                m_Backs.SetActive(false);
-                m_Fronts.SetActive((true));
+                m_Backs.SetActive(true);
+                m_Fronts.SetActive(false);
                 break;
         }
     }
@@ -65,6 +65,7 @@ public class SecondScenesManager : MonoBehaviour
 
     public IEnumerator StartScenesOne()
     {
+        m_Fronts = otherFront;
         foreach (var door in doors)
         {
             door.close = 1.5f;

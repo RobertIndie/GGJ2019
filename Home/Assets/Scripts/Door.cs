@@ -6,7 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public GameObject m_Tip;
-    public bool m_IsClosed;
+    private bool m_IsClosed;
     public Manager.ManagerScene m_DestScene;
 
     public bool cancel;
