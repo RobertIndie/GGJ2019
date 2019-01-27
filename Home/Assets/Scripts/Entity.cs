@@ -98,7 +98,7 @@ public class Entity : MonoBehaviour
         GameObject go = Manager.instance.GetBubleContent(bubleName);
         go.transform.parent = m_buble.transform;
         go.transform.localPosition = Vector3.zero;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Destroy(go);
         m_buble.SetActive(false);
     }
