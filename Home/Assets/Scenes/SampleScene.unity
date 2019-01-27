@@ -286,7 +286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &109550315
 Transform:
   m_ObjectHideFlags: 0
@@ -2157,6 +2157,7 @@ MonoBehaviour:
   wife: {fileID: 309362160}
   m_Camera: {fileID: 2000183596}
   m_workSon: {fileID: 799878236}
+  m_ThirdTriggers: {fileID: 1502907710}
   m_bubles:
   - {fileID: 354575982300645605, guid: 3884d8988228287458bf571ec6a9b5d0, type: 3}
   - {fileID: 7287629299703997727, guid: 7880184c3b58c8f4c84c6dd4b0694fd6, type: 3}

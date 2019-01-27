@@ -18,6 +18,7 @@ public class Manager : MonoBehaviour
     public GameObject wife;
     public GameObject m_Camera;
     public GameObject m_workSon;
+    public GameObject m_ThirdTriggers;
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -85,9 +86,9 @@ public class Manager : MonoBehaviour
     void Start()
     {
         ChangeScene(ManagerScene.Front);
-        //EnterSessionOne();
+        EnterSessionOne();
         //EnterSessionTwo();
-        EnterSessionThree();
+        //EnterSessionThree();
     }
 
     // Update is called once per frame
@@ -164,6 +165,7 @@ public class Manager : MonoBehaviour
         player.transform.position = new Vector3(2.5f, 0.73f, 0f);
         player.GetComponent<Entity>().moveDest = player.transform.position;
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
+        m_ThirdTriggers.SetActive(true);
     }
 
     IEnumerator SonComeInCor()
