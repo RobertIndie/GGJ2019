@@ -1,12 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
 {
     public GameObject m_Tip;
-    public bool m_IsEntered;
+    public bool m_IsClosed;
     public Manager.ManagerScene m_DestScene;
+
+    public bool cancel;
+
+    public Entity wife;
+    
+    public string cancelBoble;
+
+    public float close = 1.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +26,17 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_Tip.SetActive(m_IsEntered);
-        if (m_IsEntered && Input.GetKeyDown(KeyCode.W))
+        GameObject player = GameObject.FindWithTag("Player");
+        if (Mathf.Abs(gameObject.transform.position.x - player.transform.position.x) < close)
+            m_IsClosed = true;
+        else m_IsClosed = false;
+        m_Tip.SetActive(m_IsClosed);
+        if (m_IsClosed && Input.GetKeyDown(KeyCode.W))
         {
-            Open();
+            if (!cancel)
+                Open();
+            else 
+                StartCoroutine(wife.ShowBuble(cancelBoble));
         }
     }
 
@@ -30,17 +47,9 @@ public class Door : MonoBehaviour
             Debug.Log("开外面门");
             return;
         }
+
         Manager.instance.ChangeScene(m_DestScene);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        m_IsEntered = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        m_IsEntered = false;
-    }
-
+    
 }
