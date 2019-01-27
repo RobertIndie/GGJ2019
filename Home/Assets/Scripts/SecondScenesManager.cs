@@ -56,9 +56,10 @@ public class SecondScenesManager : MonoBehaviour
     {
         var effectObject = GameObject.FindWithTag("Effect");
         Effect effect = effectObject.GetComponent<Effect>();
-        yield return new WaitForSeconds(0.7f);
         effect.loopDarkChange(1);
-        Manager.LoadBackScene();
+        yield return new WaitForSeconds(0.7f);
+        Manager.falg = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 
 

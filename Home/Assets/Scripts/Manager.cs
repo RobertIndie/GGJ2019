@@ -20,7 +20,9 @@ public class Manager : MonoBehaviour
     public GameObject m_workSon;
     public GameObject m_ThirdTriggers;
     public List<GameObject> m_Relatives;
+
     public GameObject m_BedRoomCollider;
+
     //[System.Serializable]
     //public struct BubleItem
     //{
@@ -29,17 +31,23 @@ public class Manager : MonoBehaviour
     //}
     //public List<BubleItem> m_bubles;
     public List<GameObject> m_bubles;
+
     [System.Serializable]
     public struct PlotItem
     {
         public string plotName;
         public PlayableAsset asset;
     }
+
     public List<PlotItem> m_plots;
+
+    public static int falg = 0;
+
     public PlayableAsset GetPlot(string plotName)
     {
         return (from i in m_plots where i.plotName == plotName select i.asset).First();
     }
+
     public List<GameObject> m_YoungRooms;
     public List<GameObject> m_MatureRooms;
     public List<GameObject> m_OldRooms;
@@ -49,6 +57,7 @@ public class Manager : MonoBehaviour
     public GameObject m_BedRoomOld;
     public GameObject door;
     public GameObject outDoor;
+
     public GameObject GetBubleContent(string bubleName)
     {
         //GameObject bublePrefab = (from b in m_bubles where b.bubleName == bubleName select b.bubleObject).First();
@@ -92,9 +101,11 @@ public class Manager : MonoBehaviour
     {
         m_BedRoomCollider.SetActive(false);
         ChangeScene(ManagerScene.Front);
-        EnterSessionOne();
         //EnterSessionTwo();
-        //EnterSessionThree();
+        if (falg == 1)
+            EnterSessionThree();
+        else
+            EnterSessionOne();
     }
 
     // Update is called once per frame
@@ -106,14 +117,21 @@ public class Manager : MonoBehaviour
             director.Stop();
         }
     }
+
     public enum ManagerScene
     {
-        Front,Back,Out//外面的门
+        Front,
+        Back,
+        Out //外面的门
     }
+
     public enum Period
     {
-        Young,Mature,Old
+        Young,
+        Mature,
+        Old
     }
+
     public void ChangeScene(ManagerScene ms)
     {
         var o = GameObject.FindGameObjectsWithTag("Shadow");
@@ -121,6 +139,7 @@ public class Manager : MonoBehaviour
         {
             g.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
         }
+
         switch (ms)
         {
             case ManagerScene.Back:
@@ -133,6 +152,7 @@ public class Manager : MonoBehaviour
                 break;
         }
     }
+
     public void ChangePeriod(Period period)
     {
         foreach (var g in m_YoungRooms) g.SetActive(period == Period.Young);
@@ -145,7 +165,7 @@ public class Manager : MonoBehaviour
     {
         StartCoroutine(AwakePlot());
     }
-    
+
     IEnumerator AwakePlot()
     {
         GameObject.Find("BedRoomYoungWithoutBed").SetActive(false);
@@ -206,8 +226,10 @@ public class Manager : MonoBehaviour
         m_Camera.GetComponent<SimpleCameraFollow>().isControllable = true;
         m_ThirdTriggers.SetActive(true);
     }
+
     public GameObject EndSon;
     public GameObject TheEnd;
+
     IEnumerator SonComeInCor()
     {
         ChangePeriod(Period.Mature);
@@ -230,7 +252,7 @@ public class Manager : MonoBehaviour
         entity.moveDest = new Vector2(2.56f, 2.84f);
         yield return new WaitForSeconds(1f);
         player.GetComponent<Player>().moveDest.x = player.transform.position.x + 0.5f;
-        yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x)<0.1);
+        yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x) < 0.1);
         entity.gameObject.SetActive(false);
         player.GetComponent<Player>().isControllable = true;
         GameObject.Find("3T1")?.SetActive(false);
@@ -256,7 +278,6 @@ public class Manager : MonoBehaviour
 
     public void TheEndPlot()
     {
-        
     }
 
     public static void LoadBackScene()
