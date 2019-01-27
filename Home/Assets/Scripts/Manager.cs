@@ -169,9 +169,12 @@ public class Manager : MonoBehaviour
         entity.moveDest = new Vector2(-7, 2.84f);
         yield return new WaitForSeconds(3f);
         entity.moveDest = new Vector2(2.56f, 2.84f);
+        yield return new WaitForSeconds(0.5f);
+        player.GetComponent<Player>().moveDest.x = player.transform.position.x + 0.5f;
         yield return new WaitUntil(() => Mathf.Abs(entity.transform.position.x - entity.moveDest.x)<0.1);
         entity.gameObject.SetActive(false);
         player.GetComponent<Player>().isControllable = true;
+        GameObject.Find("3T1")?.SetActive(false);
     }
 
     public void SonComeIn()

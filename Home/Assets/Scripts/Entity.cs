@@ -54,7 +54,7 @@ public class Entity : MonoBehaviour
 
     }
     
-    void idle()
+    protected void idle()
     {
         stop = true;
         rightWalk = false;

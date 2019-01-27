@@ -54,6 +54,7 @@ public class Player : Entity
         {
             case "3T1":
                 Manager.instance.SonComeIn();
+                base.idle();
                 break;
         }
     }
