@@ -40,7 +40,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    public void Open()
+    public virtual void Open()
     {
         if (m_DestScene == Manager.ManagerScene.Out)
         {

@@ -375,6 +375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LivingRoomOld
       objectReference: {fileID: 0}
+    - target: {fileID: 2455825100604766705, guid: f0e06fd24c30f3b4ebf825d63f11f67f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2455825099465352133, guid: f0e06fd24c30f3b4ebf825d63f11f67f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -510,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 8448259445006472515, guid: d292f97832283af4096bf4adbc7701cd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8448259445006472515, guid: d292f97832283af4096bf4adbc7701cd,
         type: 3}
@@ -548,12 +553,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d292f97832283af4096bf4adbc7701cd, type: 3}
---- !u!4 &243828054 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8448259445006472515, guid: d292f97832283af4096bf4adbc7701cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 243828053}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243828055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8448259445006472517, guid: d292f97832283af4096bf4adbc7701cd,
@@ -847,6 +846,8 @@ MonoBehaviour:
   livingRoomMature: {fileID: 243828055}
   oldPieter: {fileID: 1118301081}
   livingRoomOld: {fileID: 1043966764}
+  doors: []
+  knockingDoorSource: {fileID: 0}
   startScenesOne: 0
 --- !u!95 &1209391780
 Animator:
@@ -874,9 +875,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2523547952062126454, guid: 2ecfae12e6b836742a0fe7eebc313081,
+        type: 3}
+      propertyPath: m_Name
+      value: BedRoomOld Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 1767408694, guid: 2ecfae12e6b836742a0fe7eebc313081, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 608956850, guid: 2ecfae12e6b836742a0fe7eebc313081, type: 3}
       propertyPath: m_IsActive
@@ -918,11 +924,6 @@ PrefabInstance:
     - target: {fileID: 868097346, guid: 2ecfae12e6b836742a0fe7eebc313081, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2523547952062126454, guid: 2ecfae12e6b836742a0fe7eebc313081,
-        type: 3}
-      propertyPath: m_Name
-      value: BedRoomOld Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2523547952062126448, guid: 2ecfae12e6b836742a0fe7eebc313081,
         type: 3}
@@ -1036,7 +1037,7 @@ PrefabInstance:
     - target: {fileID: 1109029520087073982, guid: 14b1d4e95126de74eabcb3e8d75a8169,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1109029520087073982, guid: 14b1d4e95126de74eabcb3e8d75a8169,
         type: 3}
@@ -1066,7 +1067,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 243828054}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7010008776454754007, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
@@ -1076,17 +1077,17 @@ PrefabInstance:
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7039999
+      value: -9.16
       objectReference: {fileID: 0}
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.29200003
+      value: 1.5599998
       objectReference: {fileID: 0}
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.92185
+      value: 4.79185
       objectReference: {fileID: 0}
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
@@ -1111,7 +1112,7 @@ PrefabInstance:
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
@@ -1131,12 +1132,22 @@ PrefabInstance:
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.39584747
+      value: 1.9792373
       objectReference: {fileID: 0}
     - target: {fileID: 7010008776454754001, guid: e2f57b697adca0e41a933b57392c77bc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6285164
+      value: 3.142582
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010008776454754000, guid: e2f57b697adca0e41a933b57392c77bc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650627814649719086, guid: e2f57b697adca0e41a933b57392c77bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2f57b697adca0e41a933b57392c77bc, type: 3}
